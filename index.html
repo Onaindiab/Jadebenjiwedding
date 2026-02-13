@@ -647,7 +647,7 @@
         <p class="rsvp-subtitle reveal">We would be delighted to celebrate this winter evening with you</p>
         <div class="rsvp-btn-container reveal">
             <!-- REPLACE THE URL BELOW WITH YOUR GOOGLE FORMS LINK -->
-            <a href="YOUR_GOOGLE_FORMS_LINK_HERE" target="_blank" class="rsvp-btn">Open RSVP Form</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGDzLNZatCgmVttQXsLzRoi4hsqIEVY9wWtPUYr4XEJYzzfw/viewform?usp=publish-editor" target="_blank" class="rsvp-btn">Open RSVP Form</a>
         </div>
         <p class="rsvp-note reveal">You'll be redirected to our Google Form to confirm your attendance</p>
     </section>
