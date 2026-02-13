@@ -532,7 +532,7 @@
                 <p class="accom-desc">Charming 3-star hotel on the banks of the Seine in Les Andelys, ~5 km away. Historic 18th-century building with 14 individually decorated rooms and a renowned restaurant.</p>
                 <div class="accom-contact">
                     📞 <a href="tel:+33232540031">+33 2 32 54 00 31</a><br>
-                    ✉️ <a href="/cdn-cgi/l/email-protection#197a76776d787a6d5971766d7c753475787a717870777c7d766b377a7674"><span class="__cf_email__" data-cfemail="e3808c8d97828097a38b8c97868fce8f82808b828a8d86878c91cd808c8e">[email&#160;protected]</span></a><br>
+                    ✉️ <a href="mailto:contact@hotel-lachainedor.com">contact@hotel-lachainedor.com</a><br>
                     🌐 <a href="https://www.hotel-lachainedor.com" target="_blank">hotel-lachainedor.com</a>
                 </div>
                 <span class="accom-tag">~5 km · charming</span>
@@ -544,7 +544,7 @@
                 <p class="accom-desc">Comfortable hotel right in the town centre with bistronomy restaurant, garden and terrace. Great value and very practical.</p>
                 <div class="accom-contact">
                     📞 <a href="tel:+33232540033">+33 2 32 54 00 33</a><br>
-                    ✉️ <a href="/cdn-cgi/l/email-protection#1e7f7d7d6b7b77725e7c776d6a6c717071736730786c"><span class="__cf_email__" data-cfemail="debfbdbdabbbb7b29ebcb7adaaacb1b0b1b3a7f0b8ac">[email&#160;protected]</span></a><br>
+                    ✉️ <a href="mailto:accueil@bistronomy.fr">accueil@bistronomy.fr</a><br>
                     🌐 <a href="https://www.hotel-andelys.fr" target="_blank">hotel-andelys.fr</a>
                 </div>
                 <span class="accom-tag">~5 km · budget-friendly</span>
@@ -556,7 +556,7 @@
                 <p class="accom-desc">For something extra special — a romantic 4-star half-timbered manor on a private island in the Seine. 12 suites and rooms, about 15 km from the venue.</p>
                 <div class="accom-contact">
                     📞 <a href="tel:+33232595333">+33 2 32 59 53 33</a><br>
-                    ✉️ <a href="/cdn-cgi/l/email-protection#2b46445e4742454f4e484445454e47474e586b4c464a424705484446"><span class="__cf_email__" data-cfemail="85e8eaf0e9ecebe1e0e6eaebebe0e9e9e0f6c5e2e8e4ece9abe6eae8">[email&#160;protected]</span></a><br>
+                    ✉️ <a href="mailto:moulindeconnelles@gmail.com">moulindeconnelles@gmail.com</a><br>
                     🌐 <a href="https://www.moulin-de-connelles.fr" target="_blank">moulin-de-connelles.fr</a>
                 </div>
                 <span class="accom-tag">~15 km · luxury</span>
@@ -658,7 +658,7 @@
         <div class="footer-heart">♥</div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         function updateCountdown() {
             const wedding = new Date('2026-12-19T15:00:00+01:00');
             const now = new Date();
@@ -681,4 +681,18 @@
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
         function toggleFaq(el) {
-            const item = el.pare
+            const item = el.parentElement;
+            document.querySelectorAll('.faq-item.open').forEach(i => { if (i !== item) i.classList.remove('open'); });
+            item.classList.toggle('open');
+        }
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
