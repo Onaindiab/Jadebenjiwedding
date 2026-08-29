@@ -515,7 +515,7 @@
             <div class="prog-card is-religious reveal">
                 <div class="prog-top">
                     <span class="prog-when"><span data-fr>Samedi 19 décembre</span><span data-en>Saturday 19 December</span></span>
-                    <span class="prog-time"><span data-fr>14h30</span><span data-en>2:30pm</span>
+                    <span class="prog-time"><span data-fr>14h30</span><span data-en>2:30pm</span></span>
                 </div>
                 <div class="prog-name"><span data-fr>Cérémonie religieuse</span><span data-en>Wedding Ceremony</span></div>
                 <div class="prog-venue">Eglise de Saint-Germain-en-Laye</div>
@@ -696,11 +696,12 @@
         try { localStorage.setItem('jb-lang', lang); } catch(e){}
     }
     (function initLang(){
+        var urlLang = (new URLSearchParams(window.location.search).get('lang') || '').toLowerCase();
+        if (urlLang === 'fr' || urlLang === 'en'){ setLang(urlLang); return; }
         var saved = null;
         try { saved = localStorage.getItem('jb-lang'); } catch(e){}
         var nav = (navigator.language || 'fr').toLowerCase();
-        var lang = saved || (nav.indexOf('en') === 0 ? 'en' : 'fr');
-        setLang(lang);
+        setLang(saved || (nav.indexOf('en') === 0 ? 'en' : 'fr'));
     })();
 
     /* ---------- COUNTDOWN ---------- */
