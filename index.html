@@ -377,6 +377,60 @@
         .foot-meta { font-family:'EB Garamond',serif; font-size: 0.7rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--ink-soft); margin-top: 0.5rem; }
         .foot-heart { color: var(--blush); margin-top: 1rem; }
 
+        /* ============ FAQ ============ */
+        .bg-forest {
+            background: linear-gradient(165deg, #35513D 0%, #2A4231 55%, #223629 100%);
+            border-top: 1px solid rgba(185,209,168,0.18);
+            border-bottom: 1px solid rgba(185,209,168,0.18);
+        }
+        .faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+        .faq-item {
+            background: rgba(247,242,231,0.055);
+            border: 1px solid rgba(185,209,168,0.26);
+            border-left: 3px solid var(--blush);
+            border-radius: 10px;
+            transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+        }
+        .faq-item:hover { background: rgba(247,242,231,0.09); transform: translateY(-2px); }
+        .faq-item[open] { background: rgba(247,242,231,0.1); border-left-color: var(--sage-light); }
+        .faq-q {
+            list-style: none; cursor: pointer;
+            display: flex; align-items: center; justify-content: space-between; gap: 1.2rem;
+            padding: 1.3rem 1.6rem;
+            font-family: 'Cormorant Garamond', serif; font-weight: 500;
+            font-size: clamp(1.15rem, 2.4vw, 1.45rem); color: var(--cream); line-height: 1.3;
+        }
+        .faq-q::-webkit-details-marker { display: none; }
+        .faq-q::marker { content: ''; }
+        .faq-sign { flex: 0 0 auto; position: relative; width: 20px; height: 20px; }
+        .faq-sign::before, .faq-sign::after {
+            content: ''; position: absolute; background: var(--blush); border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .faq-sign::before { top: 9px; left: 1px; width: 18px; height: 2px; }
+        .faq-sign::after  { left: 9px; top: 1px; width: 2px; height: 18px; }
+        .faq-item[open] .faq-sign::after { transform: rotate(90deg); opacity: 0; }
+        .faq-a {
+            padding: 0 1.6rem 1.5rem;
+            color: rgba(247,242,231,0.84); font-size: 1rem; line-height: 1.75;
+            animation: faqIn 0.35s ease;
+        }
+        .faq-a p + p { margin-top: 0.75rem; }
+        .faq-a em { color: var(--sage-light); font-style: italic; }
+        @keyframes faqIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+        .faq-gift {
+            display: inline-block; margin-top: 1.1rem; text-decoration: none;
+            font-family: 'EB Garamond', serif; font-size: 0.74rem; letter-spacing: 0.18em;
+            text-transform: uppercase; padding: 0.7rem 1.7rem;
+            background: var(--blush-soft); color: #5A2028; border-radius: 999px;
+            transition: all 0.3s ease; box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+        }
+        .faq-gift:hover { background: var(--cream); transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,0,0,0.3); }
+        @media (max-width: 480px) {
+            .faq-q { padding: 1.1rem 1.2rem; }
+            .faq-a { padding: 0 1.2rem 1.2rem; }
+        }
+        
         /* ============ SNOW (subtle, elegant) ============ */
         .snow {
             position: fixed; inset: 0; pointer-events: none; z-index: 90; overflow: hidden;
@@ -436,6 +490,7 @@
     <nav class="subnav" id="subnav">
             <a href="#programme"><span data-fr>Programme</span><span data-en>Celebration Schedule</span></a>
             <a href="#stay"><span data-fr>Hébergement</span><span data-en>Accommodations</span></a>
+            <a href="#faq"><span data-fr>FAQ</span><span data-en>FAQ</span></a>
             <a href="#rsvp"><span data-fr>Répondre</span><span data-en>RSVP</span></a>
     </nav>
 
@@ -639,6 +694,65 @@
 
         </div>
 
+    </div>
+</section>
+
+    <!-- ============ FAQ ============ -->
+<section class="faq bg-forest on-dark sec-pad" id="faq">
+    <div class="wrap">
+        <div class="sec-head reveal">
+            <p class="sec-kicker"><span data-fr>Une question ?</span><span data-en>A question?</span></p>
+            <h2 class="sec-title"><span data-fr>Questions fréquentes</span><span data-en>Frequently asked</span></h2>
+            <div class="rule"><span></span><b>✦</b><span></span></div>
+        </div>
+
+        <div class="faq-list">
+
+            <details class="faq-item reveal">
+                <summary class="faq-q">
+                    <span><span data-fr>Avez-vous une liste de mariage ?</span><span data-en>Do you have a wedding registry?</span></span>
+                    <span class="faq-sign" aria-hidden="true"></span>
+                </summary>
+                <div class="faq-a">
+                    <p data-fr>Vous êtes nombreux à nous avoir posé la question ! Ayant déjà tout ce qu'il nous faut pour notre vie à deux, nous avons opté pour une cagnotte qui nous aidera à créer de beaux souvenirs lors de notre voyage de noces.</p>
+                    <p data-fr>Bien sûr, votre présence à nos côtés est ce qui compte le plus pour nous, mais si vous souhaitez contribuer à notre prochaine aventure, vous pouvez le faire ici :</p>
+                    <p data-en>So many of you have asked! As we already have everything we need for our life together, we've set up a honeymoon fund to help us create wonderful memories on our trip.</p>
+                    <p data-en>Of course, having you by our side is what matters most to us — but if you'd like to contribute to our next adventure, you can do so here:</p>
+                    <a class="faq-gift" href="LIEN_DE_LA_CAGNOTTE" target="_blank" rel="noopener">
+                        <span data-fr>Participer à la cagnotte</span><span data-en>Contribute to the fund</span>
+                    </a>
+                </div>
+            </details>
+
+            <details class="faq-item reveal">
+                <summary class="faq-q">
+                    <span><span data-fr>Les enfants sont-ils les bienvenus ?</span><span data-en>Are children welcome?</span></span>
+                    <span class="faq-sign" aria-hidden="true"></span>
+                </summary>
+                <div class="faq-a">
+                    <p data-fr>Bien sûr !</p>
+                    <p data-fr>Nous souhaitons simplement préciser que le lieu de réception ne dispose pas d'espace ou de service dédié aux enfants. Les parents devront veiller sur leurs enfants pendant l'événement.</p>
+                    <p data-en>Of course!</p>
+                    <p data-en>We'd just like to mention that the venue has no dedicated space or childcare service for children. Parents will need to look after their little ones throughout the event.</p>
+                </div>
+            </details>
+
+            <details class="faq-item reveal">
+                <summary class="faq-q">
+                    <span><span data-fr>Y a-t-il un code vestimentaire ?</span><span data-en>Is there a dress code?</span></span>
+                    <span class="faq-sign" aria-hidden="true"></span>
+                </summary>
+                <div class="faq-a">
+                    <p data-fr>Aucun dress code imposé ! Venez dans une tenue dans laquelle vous vous sentez bien et prêts à faire la fête.</p>
+                    <p data-fr>Mariage d'hiver oblige, les paillettes et les tenues festives sont plus qu'autorisées.</p>
+                    <p data-fr><em>Seule petite consigne : les témoins seront en bordeaux, alors essayez d'éviter cette couleur pour ne pas leur voler la vedette !</em></p>
+                    <p data-en>No imposed dress code! Come in whatever makes you feel good and ready to celebrate.</p>
+                    <p data-en>It's a winter wedding, so sequins and festive outfits are more than welcome.</p>
+                    <p data-en><em>One small request: our witnesses will be wearing burgundy, so please try to avoid that colour so as not to steal their spotlight!</em></p>
+                </div>
+            </details>
+
+        </div>
     </div>
 </section>
 
